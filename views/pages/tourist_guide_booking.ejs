@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <%- include('../partials/header'); %>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourist Guide Booking</title>
+    <style>
+        body {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx8jdsOQFxKraFSZxrSfzfYt6tzCb9gt4fHA&usqp=CAU'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #007bff;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: rgba(52, 58, 64, 0.8);
+            text-align: center;
+            padding: 1rem;
+        }
+
+        section {
+            margin: 2rem;
+            text-align: center;
+        }
+
+        form {
+            max-width: 600px;
+            margin: auto;
+            background-color:#000(255, 255, 255, 0.8);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.375rem 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid #000
+            ;
+            border-radius: 0.25rem;
+        }
+
+        button {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 0.25rem;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Tourist Guide Booking</h1>
+    </header>
+
+    <section>
+        <form id="touristGuideForm">
+     
+            <label for="touristName">Name:</label>
+            <input type="text" id="touristName" name="touristName" required>
+
+            <!-- Contact Details -->
+            <div>
+                <label for="touristEmail">Email:</label>
+                <input type="email" id="touristEmail" name="touristEmail" required>
+            </div>
+
+            <div>
+                <label for="touristPhone">Phone Number:</label>
+                <input type="tel" id="touristPhone" name="touristPhone" required>
+            </div>
+
+            <!-- Tour Preferences -->
+            <div>
+                <label for="preferredLanguage">Preferred Language:</label>
+                <select id="preferredLanguage" name="preferredLanguage">
+                    <option value="english">English</option>
+                    <option value="spanish">Spanish</option>
+                    <option value="french">French</option>
+                   
+                </select>
+            </div>
+
+            <!-- Tour Schedule -->
+            <div>
+                <label for="tourDate">Date of Tour:</label>
+                <input type="date" id="tourDate" name="tourDate" required>
+            </div>
+
+            <div>
+                <label for="tourTime">Preferred Time:</label>
+                <input type="time" id="tourTime" name="tourTime" required>
+            </div>
+
+            <button type="submit">Book Tourist Guide</button>
+        </form>
+    </section>
+
+    <%- include('../partials/footer'); %>
+
+</body>
+
+</html>

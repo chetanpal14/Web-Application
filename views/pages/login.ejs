@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head'); %>
+
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <!-- Bootstrap CSS - Link to a CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
+
+</head>
+<body class="container">
+    <header>
+        <%- include('../partials/header'); %>
+      </header>
+      
+    <div class="container mt-3">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title text-center mb-4">Login</h2>
+                        <form action="/login" method="POST">
+                            <div class="form-group">
+                                <label for="username">Username:</label>
+                                <input type="text" class="form-control" id="username" name="username" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password:</label>
+                                <input type="password" class="form-control" id="password" name="password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Login</button>
+
+                        </form>
+
+                        <a href ="/register">Register</a>
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Any additional scripts -->
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // You can perform your login logic here
+
+            // Redirect to description.ejs after successful login
+            window.location.href = 'pages/welcome';
+        
+        if (isValidLogin) {
+            // Redirect to description.ejs after successful login
+            window.location.href = 'pages/welcome';
+        } else {
+            // Display error message
+            var errorMessageElement = document.getElementById('errorMessage');
+            errorMessageElement.innerHTML = 'Invalid username or password';
+            errorMessageElement.style.display = 'block';
+        }
+    });
+    </script>
+    <footer>
+        <%- include('../partials/footer'); %>
+      </footer>
+      
+</body>
+</html>

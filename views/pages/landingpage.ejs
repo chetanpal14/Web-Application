@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../partials/head'); %>
+
+
+  <meta charset="UTF-8">
+  <title>User Dashboard</title>
+  <!-- Add Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa; /* Light gray background */
+    }
+
+    header {
+      background-color: #000000; /* Blue header background */
+      color: #ffffff; /* White text color */
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo-container {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      z-index: 1; /* Ensure the logo is above the slider */
+    }
+
+    .header-links {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 60px;
+    }
+
+    .header-links a {
+      color: #ffffff; /* White link color */
+      margin: 0 15px;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .header-links a:hover {
+      color: #f8f9fa; /* Light gray on hover */
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h1 {
+      margin-top: 0;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #007bff; /* Blue heading color */
+    }
+
+    section a {
+      display: inline-block;
+      padding: 15px 30px;
+      background-color: #007bff; /* Blue button color */
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    section a:hover {
+      background-color: #000000; 
+    }
+
+    img.logo {
+      width: 120px; 
+      height: 150px;
+      border-radius: 10px; 
+    }
+
+    /* Adjust the size of the slider */
+    #dashboardSlider {
+      max-width: 100%;
+      margin-top: 70px; 
+    }
+
+    .carousel-inner img {
+      width: 50%;
+      height: 70%;
+    }
+
+    .carousel-inner .carousel-item img {
+      object-fit: cover;
+      height: 100%;
+    }
+
+    footer {
+      background-color: #007bff; /* Blue footer background */
+      color: #ffffff; /* White text color */
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body class="container">
+
+  <header>
+    <div class="logo-container">
+      <img src="views/group.png" alt="Logo" class="logo">
+    </div>
+    <div class="header-links">
+      <a href="/" class="home-link">Home</a>
+      <a href="/login" class="login-link">Login</a>
+      <a href="/register" class="register-link">Register</a>
+    </div>
+    <%- include('../partials/header'); %>
+  </header>
+
+  <!-- Image Slider Section -->
+  <section>
+    <div id="dashboardSlider" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="views/slider1.png" class="d-block w-100" alt="Slider Image 1">
+        </div>
+        <div class="carousel-item">
+          <img src="views/slider2.png" class="d-block w-100" alt="Slider Image 2">
+        </div>
+        <div class="carousel-item">
+          <img src="views/slider3.png" class="d-block w-100" alt="Slider Image 3">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#dashboardSlider" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#dashboardSlider" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </section>
+
+  <main>
+    <h1>Welcome to Your Dashboard</h1>
+    <p>Select an option to proceed:</p>
+
+    <!-- Hotel Booking Section -->
+    <section>
+      <h2>Hotel Booking</h2>
+      <img src="views/hotel.png" alt="Hotel Booking">
+      <p>Book a hotel for your stay. Find the best accommodations for your trip.</p>
+      <a href="/hotel_booking">Book Hotel</a>
+    </section>
+
+    <!-- Ticket Booking Section -->
+    <section>
+      <h2>Ticket Booking</h2>
+      <img src="views/ticket.png" alt="Ticket Booking">
+      <p>Book tickets for your travel. Explore our wide range of travel options.</p>
+      <a href="/ticket_booking">Book Tickets</a>
+    </section>
+
+    <!-- Tourist Guide Booking Section -->
+    <section>
+      <h2>Tourist Guide Booking</h2>
+      <img src="views/guide.png" alt="Tourist Guide Booking">
+      <p>Hire a tourist guide for your trip. Discover local experiences with expert guides.</p>
+      <a href="/tourist_guide_booking">Book Tourist Guide</a>
+    </section>
+  </main>
+
+  <%- include('../partials/footer'); %>
+
+  <!-- Add Bootstrap JavaScript and Popper.js -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+    integrity="sha384-Xr5fCVHXvXodq2g5cNBp9aULbZc3z5jTnu5ZmBAdkHUX8iCaQbPj2lpd+7aRb7b2"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script>
+    // Activate the carousel with a 3-second interval
+    $('#dashboardSlider').carousel({
+      interval: 1900
+    });
+  </script>
+</body>
+
+</html>
